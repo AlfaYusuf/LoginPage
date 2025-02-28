@@ -1,0 +1,207 @@
+#components-layout-demo-side .logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.3);
+}
+:where(.css-dev-only-do-not-override-1gwfwyx).ant-menu-inline.ant-menu-root .ant-menu-item >.ant-menu-title-content, :where(.css-dev-only-do-not-override-1gwfwyx).ant-menu-inline.ant-menu-root .ant-menu-submenu-title >.ant-menu-title-content{
+    color: #fff !important;
+}
+.ant-menu-submenu-title{
+    padding-left:10px !important ;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
+}
+.menu_link {
+    /* height: calc(100vh - 64px) !important; */
+    height: 100vh;
+    overflow: auto;
+}
+.menu_link::-webkit-scrollbar {
+    width: 0px;
+}
+
+section{
+    background-color: var(--basic);
+}
+
+.logo img {
+    width: 100%;
+    height: 55px;
+    padding: 5px;
+}
+.BIGSCREEN , .SMALLSCREEN {
+    background-color: #fff !important;
+}
+.Icons img{
+    height: 27px !important;
+    width: 27px !important;
+    margin-right: 10px;
+    /* padding-top: 10px; */
+}
+ /* .ant-menu-submenu-inline {
+    padding-left: 45px !important;
+} */
+.ant-menu-submenu .ant-menu-sub {
+    /* padding-left: 10px !important; */
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
+}
+.ant-menu-sub.ant-menu-inline > .ant-menu-item, .ant-menu-sub.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+    padding-left: 45px !important;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
+    text-transform: capitalize !important;
+}
+.ant-menu-vertical .ant-menu-item, .ant-menu-vertical-left .ant-menu-item, .ant-menu-vertical-right .ant-menu-item, .ant-menu-inline .ant-menu-item, .ant-menu-vertical .ant-menu-submenu-title, .ant-menu-vertical-left .ant-menu-submenu-title, .ant-menu-vertical-right .ant-menu-submenu-title, .ant-menu-inline .ant-menu-submenu-title {
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+}
+aside {
+    height: 100vh;
+    overflow: auto;
+}
+.ant-layout-sider-trigger {
+    display: none;
+}
+
+aside::-webkit-scrollbar {
+    width: 0px;
+}
+.ant-menu {
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    background:  var(--menu) !important;
+    text-transform: uppercase !important;
+    background-image: url("./../Assets/Images/pepsi_bg.jpg") !important;
+    background-position: center !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: -5px;
+}
+.layout_height {
+    overflow:auto !important;
+    max-height: calc(100vh - 110px) !important;
+    margin: 50px 0px 0px 0px !important;
+}
+
+
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    /* background-color: #001529 !important; */
+    border-left: 2px solid white !important;
+}
+
+.ant-menu-submenu ,  .ant-menu-submenu-arrow , .ant-menu-sub {
+    color:#fff !important;
+}
+/* .ant-menu-submenu:hover,  .ant-menu-submenu-arrow:hover {
+    color:#fff  !important;
+} */
+.ant-menu-item a {
+    color:#fff !important;
+}
+/* .ant-menu-item a:hover {
+    color:#fff !important;
+} */
+.ant-menu-inline:hover .ant-menu-submenu-title:hover {
+    color:#fff !important;
+    border-radius: 0px !important;
+}
+/* .ant-menu-item:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: #4d839c !important;
+} */
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: var(--li-active) !important;
+    /* border-left: 3px solid wheat; */
+    border-radius: 0px;
+}
+.menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after {
+    border:0px solid #fff !important;
+}
+.ant-menu-inline .ant-menu-item, .ant-menu-inline .ant-menu-submenu-title {
+    width: 100% !important;   
+}
+/* .Drawer_Style{
+    background: #5c1a87 !important;
+} */
+/* .site-layout-background{
+    padding: 0px !important;
+    min-height: 0px !important;
+} */
+
+.ant-menu-sub{
+      background: transparent !important;
+  }
+.ant-menu-submenu-title:hover{
+    /* border-radius: 30px; */
+    transition: 0.3s all;
+    color: #fff !important;
+}
+/* .ant-menu-sub{
+    border-radius: 30px;
+} */
+li.ant-menu-item-only-child:hover:not(.ant-menu-item-selected){
+    /* border-radius: 30px; */
+    transition: 0.2s all;
+    background: var(--li-active);
+    transform: translate3d(0,0,0);
+}
+.ant-menu-inline .ant-menu-submenu {
+    /* padding-bottom: 0.02px; */
+    position: relative;
+    overflow: hidden;
+    /* transform: translate3d(0,0,0); */
+}
+
+.ant-menu-sub.ant-menu-inline > .ant-menu-item {
+    height: 35px;
+    line-height: 35px;
+    margin: 0px !important; 
+    box-shadow: var(--basic);
+    list-style-position: inside;
+    list-style-type: disc;
+    padding-left: 48px !important;
+    border-radius: 0px !important;
+}
+.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+    height: 52px !important;
+    line-height: 40px !important;
+    margin: 0px !important; 
+    border-bottom: 1px solid var(--li-active);
+    line-height: 34px;
+    cursor: pointer;
+    box-shadow: var(--basic);
+    padding: 4px 8px;
+}
+/* .SubMain{
+    padding-left: 45px !important;
+} */
+.SubSub{
+    padding-left: 65px !important;
+} 
+ .SubSub >a::after {
+    content: '';
+    display: inline-block !important;
+    position: absolute;
+    padding: 3px;
+    z-index: 1;
+    left: 46px;
+    top: 17px;
+    background: #e7e7e7;
+    transform: rotate(130deg);
+}
+a.SubMain {
+    padding-left: 11px;
+}
+.TextL{
+    text-align: center;
+    font-weight: 700;
+}
+.none11{
+    padding-left: 0px !important;
+}
+.none11>a::after{
+    padding-left: 0px !important;
+    content: unset;
+}
+
+:where(.css-dev-only-do-not-override-1c0na6j).ant-menu-light .ant-menu-item, :where(.css-dev-only-do-not-override-1c0na6j).ant-menu-light>.ant-menu .ant-menu-item, :where(.css-dev-only-do-not-override-1c0na6j).ant-menu-light .ant-menu-submenu-title, :where(.css-dev-only-do-not-override-1c0na6j).ant-menu-light>.ant-menu .ant-menu-submenu-title{
+    color: #fff !important;
+}

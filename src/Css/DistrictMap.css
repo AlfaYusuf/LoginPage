@@ -1,0 +1,86 @@
+.divTopLegendIndicator {
+    position: absolute;
+    top: 50px !important;
+    /* display: none; */
+    margin: 20px 0px 0px 0px;
+  }
+  .table {
+    font-size: 9pt;
+    margin-top: -15px;
+  }
+  .fieldset1 {
+    border: 0px dotted #A0A0A0;
+  }
+  .legend1 {
+    font-weight: bold;
+    color: #336699;
+    letter-spacing: 2px;
+  }
+  
+  .divTopLegendIndicator {
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    width: 200px; /* Adjust the width as needed */
+    font-family: Arial, sans-serif;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .fieldset1 {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .legend1 {
+    font-weight: bold;
+    padding: 0 5px;
+  }
+  
+  .legendGrey,
+  .legendDarkRed,
+  .legendRed,
+  .legendOrange,
+  .legendLightGreen,
+  .legendDarkGreen {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .legendGrey {
+    background-color: #808080;
+  }
+  
+  .legendDarkRed {
+    background-color: #8B0000;
+  }
+  
+  .legendRed {
+    background-color: #FF0000;
+  }
+  
+  .legendOrange {
+    background-color: #FFA500;
+  }
+  
+  .legendLightGreen {
+    background-color: #90EE90;
+  }
+  
+  .legendDarkGreen {
+    background-color: #006400;
+  }
+  
+  .legenDefs {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 10px;
+  }
+  

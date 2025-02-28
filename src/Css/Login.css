@@ -1,0 +1,364 @@
+.ant-layout .site-layout .css-dev-only-do-not-override-1c0na6j{
+    height: 0 !important;
+}
+.ant-layout{
+    height: 0;
+}
+.Main_login {
+    display: flex;
+    width: 60vw;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* box-shadow: 0px 0px 20px rgb(46 36 36 / 30%); */
+    margin-top: 6%;
+    /* add by jagaddesh for invalid login cridentials */
+    position: relative;
+  }
+  
+  .Main_forget {
+    display: flex;
+    width: 60vw;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6%;
+  }
+  
+  body {
+    /* background-image: url("./../Assets/Images/pepsico.jpg"); */
+    /* background-image: url("http://falconwms.com/Demo/Images/banner-bg3e7818e040f1fb3244fc67d5d4b29ab6.png"); */
+    background-color: #4251ab !important;
+    width: 100%;
+    height: 80% !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  .coursel {
+    width: 50%;
+    display: flex;
+  }
+  
+  .Login_body {
+    background-color: var(--card);
+    width: 50%;
+    padding: 0px 0px;
+  }
+  
+  .Image_title {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px 0px 0px;
+  }
+  
+  .Login_body h1 {
+    display: flex;
+    justify-content: center;
+    padding: 14px 0px;
+    color: var(--text/60%) !important;
+    font-size: 19px;
+    font-weight: 700;
+  }
+  
+  .Login_Form {
+    width: 300px;
+    margin: auto;
+  }
+  
+  .Login_Form .divFlex {
+    margin: 10px 0px;
+  }
+  
+  .remember_forget {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0px;
+  }
+  
+  .remember_forget span {
+    padding-left: 7px;
+  }
+  
+  .remember_forget span,
+  .remember_forget p {
+    text-decoration: none;
+    font-size: 12px;
+    position: relative;
+    font-weight: bold;
+    color: grey;
+  }
+  
+  .sign_in_out_buttons {
+    display: flex;
+    margin: 15px 0px;
+    justify-content: space-between;
+  }
+  
+  .Sign_in {
+    width: 100%;
+    border: none;
+    height: 40px;
+    margin-top: 20px;
+    background-image: linear-gradient(to left, #5c1a87, #FF1010);
+    border-radius: 30px;
+    font-weight: 500;
+  }
+  
+  .Sign_up {
+    /* width: 40%; */
+    border: none;
+    /* height:40px; */
+    /* background-color: ; */
+  }
+  
+  .remember_forget input:checked~.checkBox {
+    background-color: #5c1a87;
+  }
+  
+  .Invalid {
+    color: #FF1010;
+    text-align: center;
+    /* margin-top: 20px; */
+    font-size: 16px;
+  }
+  
+  .Invalid1 {
+    visibility: hidden;
+  }
+  
+  /* change password */
+  
+  .ChangePassword_Body {
+    display: flex;
+    width: 40vw;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 20px rgb(46 36 36 / 30%);
+    margin-top: 6%;
+  }
+  
+  .ant-input-affix-wrapper {
+    font-family: "Roboto", sans-serif !important;
+    outline: 0 !important;
+    width: 100% !important;
+    border: 0 !important;
+    border-bottom: 1px solid #a2a1a1 !important;
+    padding: 0px !important;
+    font-size: 10.5px !important;
+    box-sizing: border-box !important;
+    font-size: 14px !important;
+    background: transparent !important;
+  }
+  
+  .ant-input-affix-wrapper:hover {
+    background: transparent !important;
+  }
+  
+  .forget_body {
+    background-color: white;
+    width: 100%;
+    padding: 30px 0px;
+    /* margin-bottom: 100px; */
+  }
+  
+  .forget_body h1 {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0px;
+    color: rgb(0 0 0 / 62%) !important;
+    font-size: 19px;
+    font-weight: 700;
+  }
+  
+  .forget_pass {
+    width: 60%;
+    margin-left: 60px;
+    border: none;
+    height: 40px;
+    margin-top: 20px;
+    background-image: linear-gradient(to left, #5c1a87, #FF1010);
+    border-radius: 30px;
+    font-weight: 500;
+  }
+  
+  /* Forget Password */
+  
+  .ForgetPassword {
+    display: flex;
+    width: 40vw;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 20px rgb(46 36 36 / 30%);
+    margin-top: 6%;
+  }
+  
+  .ForgetPassword_Body {
+    background-color: white;
+    width: 100%;
+    padding: 30px 0px;
+  }
+  
+  .ForgetPassword_Body h1 {
+    text-align: center;
+  }
+  
+  /* Profile page */
+  /* .Main_password{
+    display: flex;
+    width: 60vw;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  } */
+  .profile_card {
+    box-shadow: 0px 0px 20px rgb(46 36 36 / 30%);
+    width: unset !important;
+    /* height: 82vh; */
+    overflow: hidden;
+  }
+  
+  .sign_in_out_buttons {
+    display: flex;
+    margin: 15px 0px;
+    justify-content: space-between;
+    padding: 0px 0px 15px 0px;
+  }
+  
+  .Sign_in {
+    width: 100%;
+    border: none;
+    height: 40px;
+    margin-top: 20px;
+    background-image: linear-gradient(to left, #5c1a87, #FF1010);
+    border-radius: 30px;
+    font-weight: 500;
+  }
+  
+  .Sign_in_P {
+    width: 45%;
+    border: none;
+    height: 40px;
+    margin-top: 20px;
+    background-image: linear-gradient(to left, #5c1a87, #FF1010);
+    border-radius: 30px;
+    font-weight: 500;
+  }
+  
+  .spin_class1 {
+    display: none;
+  }
+  
+  .spinWidth {
+    width: calc(100vw - 80px);
+    position: absolute;
+  }
+  
+  .spinWidth1 {
+    width: calc(100vw - 200px);
+    position: absolute;
+  }
+  
+/* .spin_class2 {
+     width: 100%; 
+     height: 100vh;
+    padding-top: calc(100vh - 60vh);
+    padding-bottom: calc(100vh - 40vh - 80px);
+    z-index: 999999999999;
+    text-align: center;
+    background: rgb(0 0 0 / 32%);
+    border-radius: 4px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; 
+  }  */
+
+  .spin_class2 {
+    width: 100%; /* Ensure full width */
+    height: 100vh; /* Ensure full height */
+    padding-top: calc(100vh - 60vh);
+    padding-bottom: calc(100vh - 40vh - 80px);
+    z-index: 999999999999;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.32); /* Transparent black background */
+    border-radius: 4px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: fixed; /* Fixed position to overlay on the screen */
+    top: 0;
+    left: 0;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box; /* Include padding in the element's total size */
+}
+
+
+
+  
+  .spin_class3 {
+    padding-top: calc(100vh - 60vh);
+    padding-bottom: calc(100vh - 40vh - 80px);
+    z-index: 999999999999;
+    text-align: center;
+    background: rgb(0 0 0 / 32%);
+    border-radius: 4px;
+    display: flex;
+    text-align: center;
+    width: calc(100vw);
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 0;
+  }
+  
+  input:-webkit-autofill {
+    background-color: black !important;
+    background-image: none !important;
+  }
+  
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    /* border: 1px solid green !important; */
+    -webkit-text-fill-color: var() !important;
+    /* -webkit-box-shadow: 0 0 0px 1000px #000 inset; */
+    transition: background-color 5000s ease-in-out 0s !important;
+    color: var(--text) !important;
+  }
+  
+  #canv {
+    margin-left: -22px;
+    /* margin-bottom: -10px; */
+  }
+  
+  #profile {
+    overflow: hidden;
+    padding: 16px 30px !important;
+  }
+  
+  .profile_card .Login_Form {
+    padding: 20px 40px;
+    width: 350px !important;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+  }
+  
+  .divFlex label {
+    color: #a5a5a5 !important;
+  }
