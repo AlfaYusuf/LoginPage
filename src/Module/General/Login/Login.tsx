@@ -1,135 +1,146 @@
 import React, { useState, useEffect } from 'react';
-import { Input } from 'antd';
+import { Input, Spin } from 'antd';
 import { EyeTwoTone, EyeInvisibleOutlined } from '@ant-design/icons';
-import { useNavigate } from 'react-router-dom';
-import "./../../../Css/Login.css";
-import StickyText from "./../../../common/StickyText/StickyText.tsx"
-import { ASCYLogin } from '../../redux/actions'
-import { useDispatch } from 'react-redux'
-import { FetchLoginData } from '../../../common/services/Axios'
+import "../../../Css/Login.css";
+import StickyText from "./../../../common/StickyText/StickyText.tsx";
+import { ASCYLogin } from '../../redux/actions';
+import { useDispatch } from 'react-redux';
+import { FetchLoginData } from '../../../common/services/Axios';
 
-const Login = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+interface LoginProps {}
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [stickyVisible, setStickyVisible] = useState(false);
-  const [stickyType, setStickyType] = useState("");
-  const [stickyTitle, setStickyTitle] = useState("");
-  const [stickyMessage, setStickyMessage] = useState("");
+const Login: React.FC<LoginProps> = () => {
+    const dispatch = useDispatch();
 
-  useEffect(() => {
-    document.title = '® - Login Page';
-  }, []);
+    const [username, setUsername] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [stickyVisible, setStickyVisible] = useState<boolean>(false);
+    const [stickyType, setStickyType] = useState<string>("");
+    const [stickyTitle, setStickyTitle] = useState<string>("");
+    const [stickyMessage, setStickyMessage] = useState<string>("");
+    const [loading, setLoading] = useState<boolean>(false);
 
-  const showSticky = (isVisible, type, title, message) => {
-    setStickyVisible(isVisible);
-    setStickyType(type);
-    setStickyTitle(title);
-    setStickyMessage(message);
-  };
+    useEffect(() => {
+        document.title = '® - Login Page';
+    }, []);
 
-  const login = async () => {
-    try {
-      if (!username ) {
-        showSticky(true, 'error', 'Error', 'Please enter  Email');
-        return;
-      }
-      if (!password ) {
-        showSticky(true, 'error', 'Error', 'Please enter password');
-        return;
-      }
+    const showSticky = (isVisible: boolean, type: string, title: string, message: string) => {
+        setStickyVisible(isVisible);
+        setStickyType(type);
+        setStickyTitle(title);
+        setStickyMessage(message);
+    };
 
-      const entityObject = {
-        email: username,
-        password: password,
-      };
-      const showSpinner = true
+    const login = async () => {
+        if (!username) {
+            showSticky(true, 'error', 'Error', 'Please enter Email');
+            return;
+        }
+        if (!password) {
+            showSticky(true, 'error', 'Error', 'Please enter password');
+            return;
+        }
 
-      const response = await FetchLoginData('/authentication-contractor/login', showSpinner,entityObject);
+        setLoading(true);
+        try {
+            const entityObject = { email: username, password: password };
+            const response = await FetchLoginData('/authentication-contractor/login', true, entityObject);
 
-      if (response?.data?.tokens) {
-        const { access, refresh } = response.data.tokens;
+            if (response?.data?.tokens) {
+                const { access, refresh } = response.data.tokens;
 
+                // Store access token securely
+                sessionStorage.setItem('authToken', access.token);
+                sessionStorage.setItem('refreshToken', refresh.token);
 
-      document.cookie = `authToken=${access.token}; Secure; HttpOnly; SameSite=Strict`;
-      document.cookie = `refreshToken=${refresh.token}; Secure; HttpOnly; SameSite=Strict`;
+                dispatch(ASCYLogin({ jsonToken: access.token }));
 
+                showSticky(true, 'success', 'Success', 'Login successful!');
+            } else {
+                showSticky(true, 'error', 'Error', 'Invalid credentials');
+            }
+        } catch (error: any) {
+            console.error('Error during login:', error);
 
-        sessionStorage.setItem('authToken', access.token);
-        sessionStorage.setItem('refreshToken', refresh.token);
-
-        dispatch(ASCYLogin({ jsonToken: access.token }));
-
-        showSticky(true, 'success', 'Success', 'Login successful!');
-      } else {
-        showSticky(true, 'error', 'Error', 'Invalid credentials');
-      }
-    } catch (error) {
-      console.error('Error during login:', error);
-
-    if (error.response && error.response.status === 401) {
-      showSticky(true, 'error', 'Unauthorized', 'Invalid credentials. Please check your username and password.');
-    }else
-      showSticky(true, 'error', 'Error', 'Service Not Working');
-    }
-  };
-
-  const handleStickyClose = () => setStickyVisible(false);
-
-  return (
-    <>
-      {stickyVisible && (
-        <StickyText
-          display={stickyVisible}
-          sticky_type={stickyType}
-          sticky_title={stickyTitle}
-          sticky_message={stickyMessage}
-          sendData={handleStickyClose}
-        />
-      )}
-
-      <div className="Main_login">
-        <div className="Login_body">
-          <h1>Start Tracking Your Products Here</h1>
-          <div className="Login_Form">
-            <div className="divFlex">
-              <Input
-                required
-                placeholder="Email"
-                className="Email"
-                autoComplete="off"
-                name="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </div>
-            <div className="divFlex">
-              <Input.Password
-                required
-                placeholder="Password"
-                className="Password"
-                autoComplete="off"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                iconRender={(visible) =>
-                  visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+            if (error.response) {
+                switch (error.response.status) {
+                    case 400:
+                        showSticky(true, 'error', 'Error', 'Invalid input format.');
+                        break;
+                    case 401:
+                        showSticky(true, 'error', 'Unauthorized', 'Invalid credentials. Please check your username and password.');
+                        break;
+                    case 403:
+                        showSticky(true, 'error', 'Error', 'Access denied.');
+                        break;
+                    case 500:
+                        showSticky(true, 'error', 'Error', 'Something went wrong. Try again later.');
+                        break;
+                    default:
+                        showSticky(true, 'error', 'Error', 'An unexpected error occurred.');
                 }
-              />
+            } else {
+                showSticky(true, 'error', 'Error', 'Network error. Please check your internet connection.');
+            }
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleStickyClose = () => setStickyVisible(false);
+
+    return (
+        <>
+            {stickyVisible && (
+                <StickyText
+                    display={stickyVisible}
+                    sticky_type={stickyType}
+                    sticky_title={stickyTitle}
+                    sticky_message={stickyMessage}
+                    sendData={handleStickyClose}
+                />
+            )}
+
+            <div className="Main_login">
+                <div className="Login_body">
+                    <h1>Start Tracking Your Products Here</h1>
+                    <div className="Login_Form">
+                        <div className="divFlex">
+                            <Input
+                                required
+                                placeholder="Email"
+                                className="Email"
+                                autoComplete="off"
+                                name="username"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                            />
+                        </div>
+                        <div className="divFlex">
+                            <Input.Password
+                                required
+                                placeholder="Password"
+                                className="Password"
+                                autoComplete="off"
+                                name="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                iconRender={(visible) =>
+                                    visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+                                }
+                            />
+                        </div>
+                        <br />
+                        <div className="sign_in_out_buttons">
+                            <button className="Sign_in" onClick={login} type="button" disabled={loading}>
+                                {loading ? <Spin size="small" /> : "SIGN-IN"}
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <br />
-            <div className="sign_in_out_buttons">
-              <button className="Sign_in" onClick={login} type="button">
-                SIGN-IN
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+        </>
+    );
 };
 
 export default Login;
