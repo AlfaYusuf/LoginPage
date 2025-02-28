@@ -39,7 +39,7 @@ npm start
 npm test
 
 🔐 Login Credentials for Testing
-Email	                                     Password
+Email:-	                                     Password :-
 Lyju.cheriyapuliyangod@schindler.com         Testing@54
 
 
